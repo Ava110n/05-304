@@ -1,5 +1,7 @@
 package org.example.project
 
+import androidx.compose.ui.geometry.Offset
+
 class Cartesian {
     var x: Float
     var y: Float
@@ -8,6 +10,7 @@ class Cartesian {
         this.x = x
         this.y = y
     }
+    constructor(point: Offset, parameters: Parameters): this(Screen(point), parameters)
 
     constructor(screen: Screen, parameters: Parameters) {
         this.x =
