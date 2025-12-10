@@ -18,18 +18,21 @@ class Parameters(width: Float, height: Float, xMin: Float, xMax: Float, yMin: Fl
         //ifChangeX()
     }
 
-    fun ifChangeX() {
-        var pixelsCount = width / (xMax - xMin)
-        var y = height / pixelsCount
-        yMin = (yMax + yMin) / 2 - y / 2
-        yMax = (yMax + yMin) / 2 + y / 2
+    fun ifChangedX() {
+        val pixelsCount = width / (xMax - xMin)
+        val y = height / pixelsCount
+        val yMean = (yMax + yMin) / 2
+        yMin = yMean - y / 2
+        yMax = yMean + y / 2
     }
 
-    fun ifChangeY() {
-        var pixelsCount = height / (yMax - yMin)
-        var x = width / pixelsCount
-        xMin = (xMax + xMin) / 2 - x / 2
-        xMax = (xMax + xMin) / 2 + x / 2
+    fun ifChangedY() {
+        val pixelsCount = height / (yMax - yMin)
+        val x = width / pixelsCount
+        val xMean = (xMax + xMin) / 2
+        xMin = xMean - x / 2
+        xMax = xMean + x / 2
     }
+
 
 }
